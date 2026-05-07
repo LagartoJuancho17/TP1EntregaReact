@@ -5,27 +5,25 @@ import HomeView from "./components/HomeView";
 import "./styles.css";
 
 function App() {
-  // 1. EL ESTADO (La memoria de tu app)
-  // currentView puede ser 'home' o 'detail'
-  const [currentView, setCurrentView] = useState("home");
-  // activeRecipeId guarda el ID de la receta que queremos ver en detalle
-  const [activeRecipeId, setActiveRecipeId] = useState();
+  const [currentView, setCurrentView] = useState("home"); //Home o detail
+  const [activeRecipeId, setActiveRecipeId] = useState(); //Id de la receta elegida
 
-  // 2. FUNCIONES DE NAVEGACIÓN
-  // Estas funciones reemplazan tus document.getElementById('...').style.display
   const handleShowDetail = (id) => {
+    //Función para mostrar detalle de la receta
     setActiveRecipeId(id);
     setCurrentView("detail");
   };
 
   const handleShowHome = () => {
+    //Función para volver al inicio
     setActiveRecipeId(null);
     setCurrentView("home");
   };
 
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]); //Array de recetas
 
   useEffect(() => {
+    //Función para obtener las recetas de la API
     async function fetchRecipes() {
       try {
         const response = await fetch("https://dummyjson.com/recipes?limit=10");
@@ -40,7 +38,7 @@ function App() {
     fetchRecipes();
   }, []);
 
-  // 3. LO QUE SE DIBUJA (El Render / JSX)
+  //Renderizado condicional
   return (
     <>
       {/* El Navbar siempre se muestra arriba */}

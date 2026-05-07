@@ -7,6 +7,7 @@ function HomeView({ recipes, onRecipeClick }) {
   // Primera Receta en el HERO
   useEffect(() => {
     if (recipes.length > 0 && !heroRecipe) {
+      //Si hay recetas y no hay una en el hero, ponemos la primera
       setHeroRecipe(recipes[0]);
     }
   }, [recipes]);
@@ -15,6 +16,8 @@ function HomeView({ recipes, onRecipeClick }) {
 
   return (
     <main className="home-view">
+      {" "}
+      {/* Main de la pagina */}
       {/* SECCIÓN HERO */}
       {heroRecipe && (
         <section className="hero-section">
@@ -54,6 +57,8 @@ function HomeView({ recipes, onRecipeClick }) {
           </div>
 
           <div className="hero-side-col">
+            {" "}
+            {/* Columna lateral con otras recetas */}
             <div className="side-list-container custom-scrollbar">
               {recipes.map((r, idx) => (
                 <div
@@ -77,7 +82,6 @@ function HomeView({ recipes, onRecipeClick }) {
           </div>
         </section>
       )}
-
       {/* SECCIÓN GRILLA */}
       <section className="explore-section container-7xl">
         <h2 className="font-display section-title">Ver Más</h2>
