@@ -96,8 +96,7 @@ button {
 
 /* Hero Section */
 .hero-section {
-  padding-top: 8rem;
-  padding-bottom: 5rem;
+  padding: 8rem 4rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
