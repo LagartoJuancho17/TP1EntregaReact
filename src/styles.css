@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-cream: #f5f2ed;
+  --accent-red: #a31d1d;
+  --accent-mustard: #d4a017;
+  --accent-blue: #5b8fb9;
+  --accent-rose: #c07a7a;
+  --ink: #1a1a1a;
+  --nav-bg: rgba(245, 242, 237, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--ink);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.font-display {
+  font-family: 'Anton', sans-serif;
+}
+
+.container-7xl {
+  max-width: 80rem; 
+  margin: 0 auto;
+}
+
+.container-5xl {
+  max-width: 64rem; 
+  margin: 0 auto;
+}
+
+/* Navbar */
+.main-nav {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: 90%;
+}
+
+.nav-content {
+  background-color: var(--nav-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--accent-red);
+  border-radius: 9999px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: opacity 0.2s;
+  color: var(--accent-red);
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* Hero Section */
+.hero-section {
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .hero-image-col { grid-column: span 5; }
+  .hero-text-col { grid-column: span 4; }
+  .hero-side-col { grid-column: span 3; }
+}
+
+.hero-image-wrapper {
+  aspect-ratio: 4 / 4;
+  background-color: var(--accent-red);
+  border-radius: 100px;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.oval-mask {
+  width: 100%;
+  height: 100%;
+  clip-path: ellipse(45% 50% at 50% 50%);
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--accent-red);
+}
+
+.hero-info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-label {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  opacity: 0.6;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-secondary {
+  border: 2px solid var(--accent-red);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-red);
+  color: white;
+}
+
+/*  Lista Derecha */
+.side-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.side-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 30px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.side-item:hover {
+  background-color: white;
+  transform: translateX(5px);
+}
+
+.side-item.active {
+  background-color: white;
+  border-color: var(--item-color);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transform: translateX(10px);
+}
+
+.side-item.active .side-item-title {
+  color: var(--item-color);
+}
+
+.side-item-img-wrapper {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.side-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.side-item-title {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.side-item:hover .side-item-title {
+  color: var(--accent-red);
+}
+
+.side-item-meta {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+/* Receta Grid  */
+.explore-section {
+  margin-top: 8rem;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .recipe-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .recipe-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.recipe-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-wrapper {
+  aspect-ratio: 1 / 1;
+  border-radius: 40px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #e5e7eb;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.recipe-card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.25;
+  transition: color 0.2s;
+}
+
+.recipe-card:hover .card-title {
+  color: var(--accent-red);
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.meta-text {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.6;
+}
+
+/* DETALLES */
+.detail-view {
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: none;
+  opacity: 0;
+}
+
+.back-btn {
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+.back-btn:hover {
+  opacity: 0.7;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 768px) {
+  .detail-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.detail-img-wrapper {
+  aspect-ratio: 1 / 1;
+  border-radius: 60px;
+  overflow: hidden;
+  background-color: #e5e7eb;
+}
+
+.detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tag-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--accent-red);
+  color: var(--accent-red);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.detail-title {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--accent-red);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(26, 26, 26, 0.2);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  font-weight: bold;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+.ingredients-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.section-subtitle {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+}
+
+.detail-ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: disc;
+  list-style-position: inside;
+  opacity: 0.8;
+}
+
+.instructions-section {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.instructions-title {
+  font-size: 2.25rem;
+  text-transform: uppercase;
+}
+
+.instruction-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.625;
+  opacity: 0.9;
+}
+
+.instruction-step {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.step-number {
+  font-size: 2.25rem;
+  color: var(--accent-red);
+  opacity: 0.3;
+}
+
+/*  Scroll Cool */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--accent-red);
+  border-radius: 10px;
+}
