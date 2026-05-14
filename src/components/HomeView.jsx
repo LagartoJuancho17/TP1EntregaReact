@@ -13,7 +13,6 @@ function HomeView({ recipes, onRecipeClick }) {
   }, [recipes]);
 
   if (recipes.length === 0) return <div className="loader">Cargando...</div>; // Si no hay recetas, muestra esto
-
   return (
     <main className="home-view">
       {" "}
